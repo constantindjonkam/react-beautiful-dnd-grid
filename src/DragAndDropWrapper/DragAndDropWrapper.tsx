@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, CSSProperties } from "react";
 import { DragDropContext, Droppable, DroppableProvided, DroppableStateSnapshot, DropResult } from "react-beautiful-dnd";
 import { ListManagerItem } from "./ListManagerItem";
 import hash from "object-hash";
@@ -24,16 +24,18 @@ export interface Props {
   render(item: any): ReactElement<{}>;
   onDragEnd(result: DragAndDropResult): void;
   isDragDisabled?: boolean;
+  containerStyles?: CSSProperties;
+  gap?: number;
 }
 
-const horizontalStyle: React.CSSProperties = {
+const horizontalStyle: CSSProperties = {
   display: "flex",
   flexDirection: "row",
   alignItems: "flex-start"
 };
 
 export const DragAndDropWrapper: React.FC<Props> = props => {
-  const { onDragEnd, chunks, direction, render, isDragDisabled } = props;
+  const { onDragEnd, chunks, direction, render, isDragDisabled, containerStyles, gap } = props;
 
   return (
     <DragDropContext onDragEnd={mapAndInvoke(onDragEnd)}>
@@ -42,7 +44,7 @@ export const DragAndDropWrapper: React.FC<Props> = props => {
           {(provided: DroppableProvided, _: DroppableStateSnapshot) => (
             <div
               ref={provided.innerRef}
-              style={direction === "horizontal" ? horizontalStyle : undefined}
+              style={direction === "horizontal" && { ...horizontalStyle, ...containerStyles, gap }}
               {...provided.droppableProps}
             >
               {items.map((item: any, index: number) => (
