@@ -1,6 +1,6 @@
 {
   "name": "@constantindjm/react-beautiful-dnd-grid",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Grid management for react-beautiful-dnd",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "build": "rm -rf lib && mkdir lib && tsc -p tsconfig.build.json",
     "test:pack": "npm run build && npm pack",
     "test:demo": "npm run build && rm -rf demo/src/lib && cp -r lib demo/src/lib",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release": "npm run build && npm update"
   },
   "repository": {
     "type": "git",
