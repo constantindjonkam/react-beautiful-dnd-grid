@@ -1,6 +1,6 @@
 {
   "name": "@constantindjm/react-beautiful-dnd-grid",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Grid management for react-beautiful-dnd",
   "main": "lib/index.js",
   "scripts": {
