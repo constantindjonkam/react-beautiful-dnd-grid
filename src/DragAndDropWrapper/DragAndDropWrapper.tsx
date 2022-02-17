@@ -23,7 +23,7 @@ export interface Props {
   direction: "horizontal" | "vertical";
   render(item: any): ReactElement<{}>;
   onDragEnd(result: DragAndDropResult): void;
-  isDragDisabled: boolean;
+  isDragDisabled?: boolean;
 }
 
 const horizontalStyle: React.CSSProperties = {
@@ -32,13 +32,9 @@ const horizontalStyle: React.CSSProperties = {
   alignItems: "flex-start"
 };
 
-export const DragAndDropWrapper: React.FC<Props> = ({
-  onDragEnd,
-  chunks,
-  direction,
-  render,
-  isDragDisabled
-}: Props) => {
+export const DragAndDropWrapper: React.FC<Props> = props => {
+  const { onDragEnd, chunks, direction, render, isDragDisabled } = props;
+
   return (
     <DragDropContext onDragEnd={mapAndInvoke(onDragEnd)}>
       {chunks.map(({ id: droppableId, items }: Chunk) => (
