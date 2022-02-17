@@ -22,7 +22,7 @@ const noop = function() {};
 
 const list = [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }];
 
-const ListElement = props => <div>id: {props.item.id}</div>;
+const DraggableItem = props => <div>id: {props.item.id}</div>;
 
 const Component = () => {
   const [disableDrag, setDisableDrag] = useState(false);
@@ -32,7 +32,7 @@ const Component = () => {
       items={list}
       direction="horizontal"
       maxItems={3}
-      render={item => <ListElement item={item} />}
+      render={item => <DraggableItem item={item} />}
       onDragEnd={noop}
       isDragDisabled={disableDrag}
     />
