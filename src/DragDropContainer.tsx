@@ -6,4 +6,4 @@ import uuid from "uuid/v4";
 const ComponentWithMaxItems = withMaxItems(DragAndDropWrapper, uuid);
 const ComponentWithReactToItemsChange = withReactToItemsChange(ComponentWithMaxItems);
 
-export const ListManager = ComponentWithReactToItemsChange;
+export const DragDropContainer = ComponentWithReactToItemsChange;

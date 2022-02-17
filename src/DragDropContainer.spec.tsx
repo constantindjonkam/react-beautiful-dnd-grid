@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, mount, ReactWrapper } from "enzyme";
-import { ListManager } from "./ListManager";
+import { DragDropContainer } from "./DragDropContainer";
 import { ListManagerItem } from "./DragAndDropWrapper/ListManagerItem";
 
-describe("<ListManager />", () => {
+describe("<DragDropContainer />", () => {
   const item0 = {
     id: "id0"
   };
@@ -23,12 +23,14 @@ describe("<ListManager />", () => {
   const onDragEnd = jest.fn();
 
   it("should render without crashing", () => {
-    shallow(<ListManager items={items} direction="vertical" maxItems={3} render={render} onDragEnd={onDragEnd} />);
+    shallow(
+      <DragDropContainer items={items} direction="vertical" maxItems={3} render={render} onDragEnd={onDragEnd} />
+    );
   });
 
   it("should render a list of <ListManagerItem /> and react to props", () => {
     const wrapper: ReactWrapper = mount(
-      <ListManager items={items} direction="vertical" maxItems={3} render={render} onDragEnd={onDragEnd} />
+      <DragDropContainer items={items} direction="vertical" maxItems={3} render={render} onDragEnd={onDragEnd} />
     );
     expect(wrapper.findWhere(n => n.type() === ListManagerItem).length).toEqual(items.length);
     wrapper.setProps({ items: [...items, item3] });
@@ -37,7 +39,7 @@ describe("<ListManager />", () => {
 
   it("should render the render props", () => {
     const wrapper: ReactWrapper = mount(
-      <ListManager items={items} direction="vertical" maxItems={3} render={render} onDragEnd={onDragEnd} />
+      <DragDropContainer items={items} direction="vertical" maxItems={3} render={render} onDragEnd={onDragEnd} />
     );
     expect(wrapper.exists(".render-props-class")).toEqual(true);
   });
