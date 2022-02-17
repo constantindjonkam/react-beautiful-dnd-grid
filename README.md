@@ -16,7 +16,7 @@ https://stackblitz.com/edit/react-beautiful-dnd-grid-demo
 
 ```javascript
 import React, { useState } from "react";
-import { ListManager } from "@constantindjm/react-beautiful-dnd-grid";
+import { DragDropContainer } from "@constantindjm/react-beautiful-dnd-grid";
 
 const noop = function() {};
 
@@ -28,7 +28,7 @@ const Component = () => {
   const [disableDrag, setDisableDrag] = useState(false);
 
   return (
-    <ListManager
+    <DragDropContainer
       items={list}
       direction="horizontal"
       maxItems={3}
