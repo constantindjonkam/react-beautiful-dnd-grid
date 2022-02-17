@@ -17,6 +17,7 @@ function copyProps(src, target) {
 
 global["window"] = window;
 global["document"] = window.document;
+// @ts-ignore
 global["navigator"] = {
   userAgent: "node.js"
 };
