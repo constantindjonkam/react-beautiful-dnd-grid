@@ -32,7 +32,7 @@ const horizontalStyle: React.CSSProperties = {
   alignItems: "flex-start"
 };
 
-export const DragAndDropWrapper: React.StatelessComponent<Props> = ({
+export const DragAndDropWrapper: React.FC<Props> = ({
   onDragEnd,
   chunks,
   direction,

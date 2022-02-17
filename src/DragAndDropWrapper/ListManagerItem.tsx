@@ -9,7 +9,7 @@ export interface ListManagerItemProps {
   render(item: any): ReactElement<{}>;
 }
 
-export const ListManagerItem: React.StatelessComponent<ListManagerItemProps> = ({
+export const ListManagerItem: React.FC<ListManagerItemProps> = ({
   item,
   index,
   render,
