@@ -22,7 +22,7 @@
     "grid",
     "component"
   ],
-  "author": "Mathieu Eveillard",
+  "author": "Constantin Djonkam",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/constantindjonkam/react-beautiful-dnd-grid/issues"

@@ -4,6 +4,8 @@
 
 ```
 npm i @constantindjm/react-beautiful-dnd-grid --save-dev
+                          OR
+yarn add @constantindjm/react-beautiful-dnd-grid --dev
 ```
 
 ## Demo
