@@ -34,7 +34,9 @@ const Component = () => {
       maxItems={3}
       render={item => <DraggableItem item={item} />}
       onDragEnd={noop}
+      gap={10}
       isDragDisabled={disableDrag}
+      containerStyles={{ maxWidth: 800 }}
     />
   );
 };
