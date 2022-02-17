@@ -20,7 +20,7 @@ import { DragDropContainer } from "@constantindjm/react-beautiful-dnd-grid";
 
 const noop = function() {};
 
-const list = [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }];
+const items = [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }];
 
 const DraggableItem = props => <div>id: {props.item.id}</div>;
 
@@ -29,14 +29,14 @@ const Component = () => {
 
   return (
     <DragDropContainer
-      items={list}
+      items={items}
       direction="horizontal"
       maxItems={3}
       render={item => <DraggableItem item={item} />}
       onDragEnd={noop}
       gap={10}
       isDragDisabled={disableDrag}
-      containerStyles={{ maxWidth: 800 }}
+      containerStyles={{ marginTop: 10 }}
     />
   );
 };
