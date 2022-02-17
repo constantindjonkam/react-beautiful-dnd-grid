@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-npm i react-beautiful-dnd-grid --save-dev
+npm i @constantindjm/react-beautiful-dnd-grid --save-dev
 ```
 
 ## Demo
@@ -16,7 +16,7 @@ https://stackblitz.com/edit/react-beautiful-dnd-grid-demo
 
 ```javascript
 import React, { useState } from "react";
-import { ListManager } from "react-beautiful-dnd-grid";
+import { ListManager } from "@constantindjm/react-beautiful-dnd-grid";
 
 const noop = function() {};
 
