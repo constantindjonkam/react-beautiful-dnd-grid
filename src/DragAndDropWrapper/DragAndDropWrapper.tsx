@@ -23,6 +23,7 @@ export interface Props {
   direction: "horizontal" | "vertical";
   render(item: any): ReactElement<{}>;
   onDragEnd(result: DragAndDropResult): void;
+  isDragDisabled: boolean;
 }
 
 const horizontalStyle: React.CSSProperties = {
@@ -35,7 +36,8 @@ export const DragAndDropWrapper: React.StatelessComponent<Props> = ({
   onDragEnd,
   chunks,
   direction,
-  render
+  render,
+  isDragDisabled
 }: Props) => {
   return (
     <DragDropContext onDragEnd={mapAndInvoke(onDragEnd)}>
@@ -48,7 +50,13 @@ export const DragAndDropWrapper: React.StatelessComponent<Props> = ({
               {...provided.droppableProps}
             >
               {items.map((item: any, index: number) => (
-                <ListManagerItem key={hash(item)} item={item} index={index} render={render} />
+                <ListManagerItem
+                  key={hash(item)}
+                  item={item}
+                  index={index}
+                  render={render}
+                  isDragDisabled={isDragDisabled}
+                />
               ))}
               {provided.placeholder}
             </div>
