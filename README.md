@@ -38,7 +38,7 @@ const Component = () => {
       onDragEnd={noop}
       gap={10}
       isDragDisabled={disableDrag}
-      containerStyles={{ marginTop: 10 }}
+      containerStyles={{ minWidth: 300 }}
     />
   );
 };
