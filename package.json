@@ -1,6 +1,6 @@
 {
   "name": "@constantindjm/react-beautiful-dnd-grid",
-  "version": "1.0.9",
+  "version": "1.0.23",
   "description": "Grid management for react-beautiful-dnd",
   "main": "lib/index.js",
   "scripts": {
@@ -10,8 +10,7 @@
     "build": "rm -rf lib && mkdir lib && tsc -p tsconfig.build.json",
     "test:pack": "npm run build && npm pack",
     "test:demo": "npm run build && rm -rf demo/src/lib && cp -r lib demo/src/lib",
-    "prepublishOnly": "npm run build",
-    "release": "npm run build && npm update"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -30,28 +29,28 @@
   },
   "homepage": "https://github.com/constantindjonkam/react-beautiful-dnd-grid#readme",
   "devDependencies": {
-    "@types/enzyme": "^3.10.3",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.7",
-    "@types/object-hash": "^1.3.0",
-    "@types/react": "^16.9.3",
-    "@types/react-beautiful-dnd": "^11.0.3",
-    "@types/uuid": "^3.4.5",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "jest": "^24.9.0",
-    "jsdom": "^15.1.1",
-    "prettier": "^1.18.2",
-    "react-dom": "^16.9.0",
-    "ts-jest": "^24.1.0",
-    "typescript": "^3.6.3"
+    "@types/enzyme": "^3.1.15",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.18",
+    "@types/object-hash": "^1.2.0",
+    "@types/react": "^16.7.18",
+    "@types/react-beautiful-dnd": "^10.0.0",
+    "@types/uuid": "^3.4.4",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "jest": "^24.7.1",
+    "jsdom": "^14.0.0",
+    "prettier": "^1.15.3",
+    "react-dom": "^16.8.6",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.2.2"
   },
   "dependencies": {
     "object-hash": "^1.3.1",
-    "react": "^16.9.0",
-    "react-beautiful-dnd": "^11.0.5",
-    "uuid": "^3.3.3"
+    "react": "^16.7.0",
+    "react-beautiful-dnd": "^10.0.3",
+    "uuid": "^3.3.2"
   },
   "eslintConfig": {
     "extends": "react-app"
