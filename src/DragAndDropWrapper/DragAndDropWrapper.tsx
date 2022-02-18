@@ -2,7 +2,6 @@ import React, { ReactElement, CSSProperties } from "react";
 import { DragDropContext, Droppable, DroppableProvided, DroppableStateSnapshot, DropResult } from "react-beautiful-dnd";
 import { ListManagerItem } from "./ListManagerItem";
 import hash from "object-hash";
-import "./styles/dragDropWrapper.css";
 
 interface Location {
   id: string;
@@ -45,15 +44,11 @@ export const DragAndDropWrapper: React.FC<Props> = props => {
           {(provided: DroppableProvided, _: DroppableStateSnapshot) => (
             <div
               ref={provided.innerRef}
-              style={
-                direction === "horizontal"
-                  ? { ...horizontalStyle, ...containerStyles, gap }
-                  : { ...containerStyles, marginBottom: gap }
-              }
+              style={direction === "horizontal" ? { ...horizontalStyle, ...containerStyles, gap } : containerStyles}
               {...provided.droppableProps}
             >
-              <div className="lastchild_noMargin">
-                {items.map((item: any, index: number) => (
+              {items.map((item: any, index: number) => (
+                <div style={{ marginBottom: gap }}>
                   <ListManagerItem
                     key={hash(item)}
                     item={item}
@@ -61,8 +56,8 @@ export const DragAndDropWrapper: React.FC<Props> = props => {
                     render={render}
                     isDragDisabled={isDragDisabled}
                   />
-                ))}
-              </div>
+                </div>
+              ))}
               {provided.placeholder}
             </div>
           )}
