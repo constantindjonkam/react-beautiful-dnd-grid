@@ -22,10 +22,11 @@ export interface Props {
   chunks: Chunk[];
   direction: "horizontal" | "vertical";
   render(item: any): ReactElement<{}>;
-  onDragEnd(result: DragAndDropResult): void;
+  onDragEnd(result: DropResult): void;
   isDragDisabled?: boolean;
   containerStyles?: CSSProperties;
   gap?: number;
+  ref?: React.LegacyRef<any>;
 }
 
 const horizontalStyle: CSSProperties = {
@@ -35,10 +36,10 @@ const horizontalStyle: CSSProperties = {
 };
 
 export const DragAndDropWrapper: React.FC<Props> = props => {
-  const { onDragEnd, chunks, direction, render, isDragDisabled, containerStyles, gap } = props;
+  const { onDragEnd, chunks, direction, render, isDragDisabled, containerStyles, gap, ref } = props;
 
   return (
-    <DragDropContext onDragEnd={mapAndInvoke(onDragEnd)}>
+    <DragDropContext ref={ref} onDragEnd={onDragEnd}>
       {chunks.map(({ id: droppableId, items }: Chunk) => (
         <Droppable key={droppableId} droppableId={droppableId} direction={direction}>
           {(provided: DroppableProvided, _: DroppableStateSnapshot) => (
