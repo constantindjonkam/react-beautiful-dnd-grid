@@ -1,4 +1,5 @@
 import React from "react";
+import { DropResult } from "react-beautiful-dnd";
 import { Omit } from "../util/omit";
 import { splitItems, computeOriginalIndex, computeOriginalIndexAfterDrop } from "./compute";
 
@@ -19,7 +20,7 @@ export interface Chunk {
 
 export interface Props {
   chunks: Chunk[];
-  onDragEnd(result: DragAndDropResult): void;
+  onDragEnd(result: DropResult): void;
 }
 
 export interface WithMaxItemsProps {
